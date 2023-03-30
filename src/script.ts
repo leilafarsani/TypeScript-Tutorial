@@ -263,3 +263,68 @@ sub(2, 1, 7);
 //Note that if we give an argument for the parameter c, 
 //the priority will be with the argument.
 
+
+
+// Type Aliases
+
+//We can define different types explicitly or union with using type keyword
+// so they would be shorter and easier when using.
+type s = string;
+type n = number;
+type sn = string|number;
+type snb = string | number | boolean;
+
+type arrayType = (string | number | boolean);
+
+type objectType = {
+    name: string,
+    uid: string | number
+};
+
+// string - number - boolean
+
+let fName : s;
+let age2 : n;
+let isMale : boolean;
+let mixed1 : s | n;
+let mixed2 : snb;
+
+// let mixed3 : string | number | boolean;
+
+
+//array
+
+// let arr : arrayType[] = [];
+
+// arr.push(12);
+// arr.push('mahdi');
+// arr.push(true);
+
+// console.log(arr);
+
+//object
+
+// let user : objectType;
+
+// user = {name: 'mahdi', uid: '24'};
+
+// console.log(user);
+
+
+//Function
+
+// let sayHello = (name: s, age2: n, phone: sn) => {
+//     console.log(`hi my name is ${name} and im ${age} years old`);
+// }
+
+// sayHello('mahdi', 20, 123);
+// sayHello('bahram', 32, '321');
+
+
+let greeting = (user: objectType) => {
+    console.log(`${user.name} has a uid of ${user.uid}`);
+}
+
+greeting({name: 'mahdi', uid: 123});
+greeting({name: 'bahram', uid: '123'});
+
