@@ -46,7 +46,7 @@ console.log(mixedArray);
 
 //Object
 
-let person ={
+let person1 ={
     name : "John",
     age : 30,
     isMale : true,
@@ -54,15 +54,15 @@ let person ={
 //person = [] Type 'undefined[]' is missing the following properties from type '{ name: string; age: number; isMale: boolean; }': name, age, isMale
 //person = {}; Type '{}' is missing the following properties from type '{ name: string; age: number; isMale: boolean; }': name, age, isMale
 //person.name = 12; (X)
-person = {
+person1 = {
   name: "Joe",
   age: 35,
   isMale: true,
 }; //is OK.
-person.name = "James" //is OK.
+person1.name = "James" //is OK.
 //person.phone = 35; Property 'phone' does not exist on 
 //type '{ name: string; age: number; isMale: boolean; }'. However in JS it is OK.
-console.log(person);
+console.log(person1);
 
 //So in objects
 //Structure including the keys should be exactly the same.
@@ -125,15 +125,15 @@ name:"Lily",
 //If I want to have any possible different types when initializing later,
 // we can use any, however we should be aware that we might face same kind of issues in JS.
 
-let age: any;
+let age1: any;
 
 age = 25;
 console.log(age);
 
-age = "mahdi";
+age1 = "mahdi";
 console.log(age);
 
-age = true;
+age1 = true;
 console.log(age);
 
 let mixed: any[] = [];
@@ -196,3 +196,70 @@ console.log(person);
 // auto saving of changes if we want
 
 // ? Question: What is "use strict"; that we get in the js files.
+
+
+//Functions
+
+//if we declare a function named greet or even just declare it with its type like
+let greet: Function;
+//type of greet is function. This means that we cant say for example 
+//great = "dfdh" or a number but we can say sth like this
+
+greet = () => {
+    console.log('Hello, World');
+}
+
+//we can fix our parameters type like this:
+//Note that this function does not return anything so type of it is void.
+//If we hover over the arrow we can see it.
+let sayHello = (fName: string) => {
+    console.log('Hello', fName);
+}
+//if we call sayHello() without arguments or with arguments which
+// are not strings then we get two different errors
+
+
+// Functions which returns values.
+// The type of these functions should be the type of their return values.
+//In the following example the type of the return value is number so 
+//the type of the 
+
+let add = (a: number, b: number) => {
+    return a+b;
+}
+
+// let result = add(12, 2);
+// console.log(result);
+
+// console.log(add(5, 7));
+
+
+let sub = (a: number, b: number, c: number | string = 0) : number => {
+    console.log(c);
+    return a-b;
+}
+
+sub(2, 1, 7); 
+//c is 7 in this case, it also could be a string as it has union types.
+
+// let result: string;
+// result = sub(5,2);
+
+//Type of the function sub is number, as its parameters are numbers and
+//it returns a number, we can see that by hovering over the arrow, However,
+//in the above example we see its shown with :number after the () anyway, so 
+//we can see it easily in case we have a long codes.
+//so if we define the return with another type like string we get error.
+
+//Arbitrary parameters:
+//If our function has more parameters than the arguments we usually get error 
+//In the above function if we consider c as a arbitrary parameter (with ?) and 
+// define it like this c?: number | string , we don't get error.
+//In this case when console.log c we get undefined as we defined it as a parameter
+// but we didn't give any corresponded arguments for it. Another way to 
+//not getting the error is giving it a default value, like here we gave it 0.
+//c: number | string = 0
+//If console.log the c we get 0.
+//Note that if we give an argument for the parameter c, 
+//the priority will be with the argument.
+

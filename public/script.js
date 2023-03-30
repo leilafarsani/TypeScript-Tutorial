@@ -37,7 +37,7 @@ mixedArray.push(11); //is OK.
 mixedArray.push("Lily"); //is OK.
 console.log(mixedArray);
 //Object
-let person = {
+let person1 = {
     name: "John",
     age: 30,
     isMale: true,
@@ -45,15 +45,15 @@ let person = {
 //person = [] Type 'undefined[]' is missing the following properties from type '{ name: string; age: number; isMale: boolean; }': name, age, isMale
 //person = {}; Type '{}' is missing the following properties from type '{ name: string; age: number; isMale: boolean; }': name, age, isMale
 //person.name = 12; (X)
-person = {
+person1 = {
     name: "Joe",
     age: 35,
     isMale: true,
 }; //is OK.
-person.name = "James"; //is OK.
+person1.name = "James"; //is OK.
 //person.phone = 35; Property 'phone' does not exist on 
 //type '{ name: string; age: number; isMale: boolean; }'. However in JS it is OK.
-console.log(person);
+console.log(person1);
 //So in objects
 //Structure including the keys should be exactly the same.
 //Also data types of the values should be the same types.
@@ -106,12 +106,12 @@ personTwo = {
 //any
 //If I want to have any possible different types when initializing later,
 // we can use any, however we should be aware that we might face same kind of issues in JS.
-let age;
+let age1;
 age = 25;
 console.log(age);
-age = "mahdi";
+age1 = "mahdi";
 console.log(age);
-age = true;
+age1 = true;
 console.log(age);
 let mixed = [];
 mixed.push(25);
@@ -153,10 +153,35 @@ console.log(person);
 //In here I changed "rootDir": "./",   TO   "rootDir": "./src", AND
 //"outDir": "./",  TO   "outDir": "./public",  
 //It means compile all the ts files in src to the public so js files will be created in the public folder.
-//  So we don't need to give address in the terminal, it would be 
+//So we don't need to give address in the terminal, it would be 
 //applied automatically with only typings tsc and either tsc -w for auto saving the changes also.
-// For the last point here I want to mention that sometimes we have some ts files which we don't want them 
-// to be automatically compiled so in this case we can go to the tsConfig.json file and at the end of it
-// we use the property of include and give the name of the folder that we want its files to be compiled.
+// For the last point here, I want to mention that sometimes we have some ts files which we don't want them 
+// to be automatically compiled (with only tsc in the terminal) so in this case we can go to the tsConfig.json
+//file and at the end of it we use the property of include and give the name of the folder that
+// we want its files to be compiled.
 //"include": ["src"]
+//In this case, if we want to compile any file outside the src folder 
+// we should do it manually. tcs and name of the file and -w for
+// auto saving of changes if we want
 // ? Question: What is "use strict"; that we get in the js files.
+//Functions
+let greet;
+greet = () => {
+    console.log('Hello, World');
+};
+let sayHello = (fName) => {
+    console.log('Hello', fName);
+};
+let add = (a, b) => {
+    return a + b;
+};
+// let result = add(12, 2);
+// console.log(result);
+// console.log(add(5, 7));
+let sub = (a, b, c = 0) => {
+    console.log(c);
+    return a - b;
+};
+sub(2, 1, 7);
+// let result: string;
+// result = sub(5,2);
