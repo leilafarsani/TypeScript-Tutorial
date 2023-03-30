@@ -69,3 +69,54 @@ console.log(person);
 //Also data types of the values should be the same types.
 //Also we get error if we point to any keys that are not in the object.
 //However in JS we don't get any error and if console.log it we get undefined, which is not good 
+
+//Explicit Types
+//If we want to only declare a variable without assigning it any value
+//then we can write its type after: So we cant assign it to a value with any other type later.
+
+let firstName: string;
+//firstName=12 (X) Type 'number' is not assignable to type 'string'.
+firstName="Leila" //is OK.
+let age: number;
+let isFemale: boolean;
+
+//array
+//let numArray:number[];
+//numArray[0]=1; //is OK here but not in the browser.
+// numArray[0]="1" (X)
+//We cant use .push() because it is like pushing to nothing, even though
+//we don't get error here but we get an error in the browser.
+//the way to get around of this is, 
+let numArray :number[]=[];
+numArray[0]=1; //is OK here and in the browser.
+// numArray[0]="1" (X)
+//Note that we can only push numbers(with type number) to the array.
+numArray.push(26);
+console.log(numArray);
+
+//union types
+
+//arrays
+let mixedArr:(number |string|boolean)[] = [];
+mixedArr.push(12);
+mixedArr.push(true);
+console.log(mixedArr);
+
+//variables
+let uId:number | string;
+//uId=false (X) Type 'boolean' is not assignable to type 'string | number'.
+uId =15;
+console.log(uId); //is Ok.
+
+//Object
+let personOne: object;
+personOne ={name: 'John', age:30};
+personOne =[]; //is Ok.
+let personTwo :{name: string, age:number, isMale:boolean};//just declaring the object here.
+personTwo= {
+name:"Lily",
+ age:25, 
+ isMale:false
+} //initilization
+//if I add another property in the object above when initilizing I get 
+//error as there is not in the object when declaring.

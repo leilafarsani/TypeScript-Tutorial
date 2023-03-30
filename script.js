@@ -58,3 +58,35 @@ console.log(person);
 //Also data types of the values should be the same types.
 //Also we get error if we point to any keys that are not in the object.
 //However in JS we don't get any error and if console.log it we get undefined, which is not good 
+//Explicit Types
+//If we want to only declare a variable without assigning it any value
+//then we can write its type after: So we cant assign it to a value with any other type later.
+var firstName;
+//firstName=12 (X) Type 'number' is not assignable to type 'string'.
+firstName = "Leila"; //is OK.
+var age;
+var isFemale;
+//array
+//let numArray:number[];
+//numArray[0]=1; //is OK here but not in the browser.
+// numArray[0]="1" (X)
+//We cant use .push() because it is like pushing to nothing, even though
+//we don't get error here but we get an error in the browser.
+//the way to get around of this is, 
+var numArray = [];
+numArray[0] = 1; //is OK here and in the browser.
+// numArray[0]="1" (X)
+//Note that we can only push numbers(with type number) to the array.
+numArray.push(26);
+console.log(numArray);
+//union types
+//arrays
+var mixedArr = [];
+mixedArr.push(12);
+mixedArr.push(true);
+console.log(mixedArr);
+//variables
+var uId;
+//uId=false (X) Type 'boolean' is not assignable to type 'string | number'.
+uId = 15;
+console.log(uId); //is Ok.
