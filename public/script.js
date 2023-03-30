@@ -165,13 +165,25 @@ console.log(person);
 // auto saving of changes if we want
 // ? Question: What is "use strict"; that we get in the js files.
 //Functions
+//if we declare a function named greet or even just declare it with its type like
 let greet;
+//type of greet is function. This means that we cant say for example 
+//great = "dfdh" or a number but we can say sth like this
 greet = () => {
     console.log('Hello, World');
 };
+//we can fix our parameters type like this:
+//Note that this function does not return anything so type of it is void.
+//If we hover over the arrow we can see it.
 let sayHello = (fName) => {
     console.log('Hello', fName);
 };
+//if we call sayHello() without arguments or with arguments which
+// are not strings then we get two different errors
+// Functions which returns values.
+// The type of these functions should be the type of their return values.
+//In the following example the type of the return value is number so 
+//the type of the 
 let add = (a, b) => {
     return a + b;
 };
@@ -183,5 +195,31 @@ let sub = (a, b, c = 0) => {
     return a - b;
 };
 sub(2, 1, 7);
-// let result: string;
-// result = sub(5,2);
+// string - number - boolean
+let fName;
+let age2;
+let isMale;
+let mixed1;
+let mixed2;
+// let mixed3 : string | number | boolean;
+//array
+// let arr : arrayType[] = [];
+// arr.push(12);
+// arr.push('mahdi');
+// arr.push(true);
+// console.log(arr);
+//object
+// let user : objectType;
+// user = {name: 'mahdi', uid: '24'};
+// console.log(user);
+//Function
+// let sayHello = (name: s, age2: n, phone: sn) => {
+//     console.log(`hi my name is ${name} and im ${age} years old`);
+// }
+// sayHello('mahdi', 20, 123);
+// sayHello('bahram', 32, '321');
+let greeting = (user) => {
+    console.log(`${user.name} has a uid of ${user.uid}`);
+};
+greeting({ name: 'mahdi', uid: 123 });
+greeting({ name: 'bahram', uid: '123' });
