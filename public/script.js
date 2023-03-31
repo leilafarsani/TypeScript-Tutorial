@@ -241,8 +241,10 @@ greetings = (name, greeting) => {
 greetings('mahdi', 'hello');
 //Example 2
 let calc;
-//with the pattern above we should define our function the way that we get 
-//the return with a number type for sure otherwise we get an error.
+//Note that with the pattern above we should define our function
+//with the same parameters type as in the pattern and ALSO
+//the way that we get the return with a number type for sure 
+//otherwise we get an error.
 calc = (numOne, numTwo, action) => {
     if (action === 'add') {
         return numOne + numTwo;
@@ -252,7 +254,6 @@ calc = (numOne, numTwo, action) => {
     }
 };
 console.log(calc(1, 3, 'mahdi'));
-//Example 3
 let person2;
 person2 = (mahdi) => {
     console.log(`my name is ${mahdi.name} and im ${mahdi.age2} years old`);
