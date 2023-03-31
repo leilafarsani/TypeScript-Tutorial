@@ -223,3 +223,38 @@ let greeting = (user) => {
 };
 greeting({ name: 'mahdi', uid: 123 });
 greeting({ name: 'bahram', uid: '123' });
+// let greetings = Function;
+//Lets try to build a pattern for our function greetings
+//Example 1
+let greetings;
+//We don't use {} because we don't want to initialize the function
+//its just giving it the pattern
+//lets initialize the function
+//Note after the arrow it should be voild if the function
+//doesn't return anything or if result, it should be the type of the return.
+greetings = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
+};
+// greetings = (name: string, greeting: boolean) => {
+//     console.log(`${name} says ${greeting}`);
+// } //we get error. 
+greetings('mahdi', 'hello');
+//Example 2
+let calc;
+//with the pattern above we should define our function the way that we get 
+//the return with a number type for sure otherwise we get an error.
+calc = (numOne, numTwo, action) => {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
+};
+console.log(calc(1, 3, 'mahdi'));
+//Example 3
+let person2;
+person2 = (mahdi) => {
+    console.log(`my name is ${mahdi.name} and im ${mahdi.age2} years old`);
+};
+person2({ name: 'bahram', age2: 25 });
