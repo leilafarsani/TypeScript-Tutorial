@@ -1,0 +1,17 @@
+Introduction
+
+TypeScript is an open-source programming language developed and maintained by Microsoft.
+It is a superset of JavaScript, which means that any valid JavaScript code is also valid TypeScript code.
+TypeScript extends JavaScript by adding optional static type annotations, which allow developers to catch
+errors at compile-time rather than at runtime. This can help to improve code quality, reduce bugs, and make 
+code easier to maintain.
+TypeScript also includes several other features, such as interfaces, classes, and modules, which help to 
+organize and structure code. It also includes advanced features such as decorators and generics, which can 
+be used to write more flexible and reusable code.
+TypeScript code is compiled into JavaScript code, which can then be executed in any modern web browser or
+JavaScript runtime environment. The TypeScript compiler can be configured to target different versions of
+ECMAScript, which allows developers to use the latest features of JavaScript while still maintaining 
+compatibility with older browsers.
+TypeScript is widely used in web development, particularly with the Angular framework. It is also used 
+in server-side development with Node.js, and in desktop and mobile application development with frameworks 
+such as React Native and Electron.
